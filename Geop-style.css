@@ -1,0 +1,182 @@
+body {
+background-color: rgb(249, 192, 255);
+}
+#hr-top {
+    margin-top: 30px;
+ }
+ ul {
+     list-style-type: none;
+     margin: 0;
+     padding: 0;
+ }
+
+
+.Header {
+/* border-bottom: solid; */
+border: solid;
+overflow: hidden;
+/* background-color: rgb(217, 160, 223); */
+background-color: rgb(207, 101, 180);
+height: 85px;
+
+}
+
+.Trivia-logo{
+float: left;
+width: 100px; 
+}
+
+.Headline{
+float: left;
+width: auto;
+margin-left: 35%;
+font-family: "Comic Sans MS";
+font-size: large;
+
+}
+
+.trivia-container {
+    display: flex;
+    overflow: hidden;
+    padding-top: 80px;
+    justify-content: space-around;
+    text-align:center; 
+}
+
+.trivia-children {
+    /* float: left; */
+    width: 50%;
+    box-sizing: border-box;
+    
+}
+
+#Geography-img{
+    /* padding-left: 200px;  */
+    border: solid black;
+    height: 400px;
+    width: 400px;
+    margin-left: 200px;
+
+}
+
+.about-section {
+    padding-left: 20px;
+    height: 400px;
+}
+
+
+.othergames-container {
+    display: flex;
+    padding-left: 20px;
+    padding-top: 100px;
+    justify-content: space-around;
+    text-align: center;
+   
+}
+
+.box {
+    width:300px;
+    height:320px;
+    overflow: hidden;
+    border: 1px solid;
+    background-color: white;
+    
+}
+
+.box h2 {
+    border-bottom:solid;
+}
+
+.box img {
+    height: 250px;
+    /* max-width: 100%;
+    max-height: 100%; */
+    display: block;
+    /* object-fit: cover; */
+    width: 300px;
+    text-align: center;
+   
+}
+
+#game-container  {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    /* text-align: left; */
+    font-size: large;
+}
+
+.game {
+text-align: center;
+ width: 800px;
+ height: 600px;
+}
+
+.game ul {
+    display: inline-block;
+    text-align: left;
+}
+
+#question-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    width: 800px;
+    margin: 0 auto;
+}
+
+#question {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-family: Comic Sans MS;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    background-color:blue;
+    color: #fff;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+li:hover {
+    background-color: #2980B9;
+}
+#next-button {
+    background-color: #87CEEB;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+#next-button:hover {
+    background-color: #27AE60;
+}
+
+#restart-button {
+    background-color: #87CEEB;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+#restart-button:hover {
+    background-color: #27AE60;
+}
