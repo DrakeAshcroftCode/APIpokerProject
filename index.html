@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Y2K Games Paradise</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ff69b4; /* Hot Pink */
+    background-image: 
+        radial-gradient(circle at top left, #ff4500, transparent),
+        radial-gradient(circle at bottom right, #1e90ff, transparent);
+    background-blend-mode: multiply;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 3em;
+    background: -webkit-linear-gradient(45deg, #ff4500, #1e90ff);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0px 0px 5px rgba(255,255,255,0.8);
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+.button {
+    text-decoration: none;
+    padding: 10px 30px;
+    font-size: 1.2em;
+    border-radius: 20px;
+    background: -webkit-linear-gradient(45deg, #00ff00, #ffff00);
+    color: black;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+}
+
+.button:hover {
+    transform: translateY(-5px);
+}
+
+.button:active {
+    transform: translateY(0);
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Y2K Games</h1>
+        </header>
+        <nav>
+            <a href="trivia.html" class="button">Trivia Game</a>
+            <a href="whackamole.html" class="button">Whack-a-Mole</a>
+        </nav>
+    </div>
+</body>
+</html>
