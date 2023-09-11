@@ -9,7 +9,7 @@
 <body>
 
 <div class="Header">
-    <div class="Trivia-logo"><img src="logo.jpg" alt="" width="100px" height="100px"></div>
+    <div class="Trivia-logo"><img src="logo.jpg" alt="" width="100px" height="91px"></div>
     <div class="Headline"> <h1> Brain Tease Trivia</h1></div>
     
 </div>
@@ -29,6 +29,16 @@
             <button id="play-btn" style="background-color: #4CAF50; color: white; padding: 15px 30px; border: none; border-radius: 5px; font-size: 18px;">Play Now</button>
         </div>
    </div>
+   <hr id="hr-top" size="2" color="black" width="50%">
+    <div id="question-container" display: hidden>
+        <h1>Trivia Game</h1>
+        <p id="question"></p>
+        <ul id="answers"></ul>
+        <button id="next-button">Next Question</button>
+        <button id="restart-button">Restart Game</button>
+    </div>
+    <hr id="hr-bottom" size="2" color="black" width="50%">
+
 
     <div class="othergames-container"> 
              <div class="box">
@@ -38,7 +48,7 @@
 
         <div class="box">
             <h2> Entertainment Trivia</h2>
-            <a href=""><img src="tv.jpeg" alt=""></a>
+            <a href=""><img src="tv.jpg" alt=""></a>
         </div>
         <div class="box">
             <h2>Mythology Trivia</h2>
@@ -48,23 +58,11 @@
         </div> 
     </div> 
 
-    <hr size="2" color="black" width="50%">
-
-    <div id="game-container" style="display:none">
-    <div class="game">
     
-    <h1> Trivia Game</h1>
-    <div class="questions">
-    <p>Question 1: What is the capital of france</p>
-    </div>
-    <div class="options">
-    <ul>
-        <li> <input type="radio" name="q1" value="paris"> Paris </li>
-        <li> <input type="radio" name="q1" value="london"> London </li>
-    </ul>
-    </div>
-    <button id="next-btn" style="background-color: #87CEEB; color: white; padding: 15px 30px; border: none; border-radius: 5px; font-size: 18px;">Next</button>
-    <button id="submit-btn" style="background-color: #87CEEB; color: white; padding: 15px 30px; border: none; border-radius: 5px; font-size: 18px;">Submit</button>
+
+   
+
+    
     </div>
     </div>
 
