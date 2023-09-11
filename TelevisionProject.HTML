@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #374069;
+            color: white;
+            padding: 10px 20px;
+        }
+    
+        .logo {
+            flex-grow: 1;
+        }
+    
+        .text {
+            text-align: center;
+            flex-grow: 2;
+        }
+    
+        .button {
+            flex-grow: 1;
+            text-align: right;
+        }
+    
+        .button a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #99449c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .container {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px;
+    }
+
+    .left-box {
+        flex-grow: 0;
+        background-color: lightblue;
+        padding: 20px;
+        margin-right: 10px;
+    }
+
+    .middle-box {
+        flex-grow: 6;
+        background-color: lightgreen;
+        padding: 20px;
+        margin: 0 10px;
+        height: 500px;
+        width: 100px;
+       
+    }
+
+    .right-box {
+        flex-grow: 1;
+        background-color: lightcoral;
+        padding: 20px;
+        margin-left: 10px;
+    }
+    body {
+    background-color: purple;
+}
+#question-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 20px;
+}
+#question {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+li:hover {
+    background-color: #2980B9;
+}
+#next-button {
+    background-color: #2ECC71;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+#next-button:hover {
+    background-color: #27AE60;
+}
+#question-container li {
+     
+    background-color: #3498DB;
+    color: #fff;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    }
+    .container img {
+            display: block;
+            margin: 0 auto;
+    }
+    .image-container1 {
+        flex-grow: 1;
+    background-color: #eac820;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+       
+    }
+    .image-container2 {
+        flex-grow: 1;
+    background-color: #d61bba;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+        
+    }
+    .middleheader {
+        display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #374069;
+            color: white;
+            padding: 10px 20px;
+    }
+    
+    .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+    </style>
+    
+    <div class="header">
+        <div class="logo">
+            <img src="logo.jpg" alt="Logo" width="100px" height="100px">
+        </div>
+        <div class="text">
+            <h1>Television Trivia</h1>
+        </div>
+        <div class="button">
+            <a href="#">Home</a>
+            <a href="#">Play as Guest</a>
+           
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="left-box">
+            <!-- Content for the left box -->
+            <h2>Intruction</h2>
+            <ol>
+                <li>Click the "Start" button to begin the trivia game.</li>
+                <li>Read each question carefully.</li>
+                <li>Select the correct answer from the options provided.</li>
+                <li>Click the "Next" button to move to the next question.</li>
+                <li>Your score will be calculated based on correct answers.</li>
+                <li>Complete all questions to finish the game.</li>
+                <li>After the game, you can view your final score.</li>
+                <li>Dont Forget to have fun!!.</li>
+            </ol>
+            <img src="tv.jpeg" alt="Logo" width="300px" height="300px">
+        </div>
+        <div class="middle-box">
+            <!-- Content for the middle box -->
+            <h1>Trivia Game</h1>
+    <div id="question-container">
+        <p id="question"></p>
+        <ul id="answers"></ul>
+    </div>
+    <button id="next-button">Next Question</button>
+    <button id="restart-button">Restart Game</button>
+        </div>
+        <div class="right-box">
+            <!-- Content for the right box -->
+            <h2>TIPS FOR PLAYERS!</h2>
+            <p>Familiarize yourself with the trivia platform.</p>
+            <p>Keep an eye out or special questions.</p>
+            <P>Stay up-to-date with current events and pop culture </P>
+            <p>Recognize the main actors in popular TV series.</p>
+            <p>Trivia questions might revolve around an actor's roles</p>
+
+
+               
+        </div>
+    </div>
+   
+   
+<div class="middleheader">
+    <div class="text">
+        <h1>More Trivia!!!</h1>
+</div>
+</div>
+
+
+    <div class="image-container1">
+        <img src="mythology.avif" alt="Image 1" width="250px" height="250px">
+        <div class="text1">
+            <p>This is Mythology Trivia</p>
+        </div>
+    </div>
+
+    <div class="image-container2">
+        <img src="geography-image-300x300.jpg" alt="Image 2" width="250px" height="250px">
+        <div class="text2">
+            <p>This is Geography Trivia</p>
+        </div>
+    </div>
+
+    
+    <script src="TPROJECT.js"></script>
+   
+    
+    
+    
+    
+    
+    
+    
+    
+</div>
+</body>
+</html>
