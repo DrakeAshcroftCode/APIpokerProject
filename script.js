@@ -52,7 +52,6 @@ const ACHIEVEMENTS = [
     },
 ];
 
-// Load achievements from localStorage
 function loadAchievements() {
     const storedAchievements = localStorage.getItem('achievements');
     if (storedAchievements) {
@@ -61,19 +60,17 @@ function loadAchievements() {
     return [];
 }
 
-// Save achievements to localStorage
 function saveAchievements(achievements) {
     localStorage.setItem('achievements', JSON.stringify(achievements));
 }
 
-// Check and update achievements based on player stats
 function updateAchievements(stats) {
     let achievementsUnlocked = loadAchievements();
     let newAchievements = false;
 
     for (const achievement of ACHIEVEMENTS) {
         if (achievementsUnlocked.includes(achievement.id)) {
-            continue; // Skip already unlocked achievements
+            continue; 
         }
 
         if (achievement.condition(stats)) {
@@ -91,7 +88,7 @@ async function fetchQuestions() {
     const response = await fetch('https://opentdb.com/api.php?amount=10');
     const data = await response.json();
     questions = data.results;
-    decodeQuestionHtmlEntities(); // Call the decoding function
+    decodeQuestionHtmlEntities(); 
     displayQuestion();
 }
 function decodeQuestionHtmlEntities() {
@@ -107,7 +104,7 @@ function displayQuestion() {
         document.getElementById('question').textContent = question.question;
 
         const answers = [...question.incorrect_answers, question.correct_answer];
-        // Shuffle answers for randomness
+        
         answers.sort(() => Math.random() - 0.5);
 
         let answersHtml = '';
@@ -148,8 +145,7 @@ function checkAnswer(answer) {
         incorrectAnswers: incorrectAnswers
     };
     
-    updateAchievements(stats);  // Check for new achievements after each answer
-    
+    updateAchievements(stats);  
     currentQuestionIndex++;
     loadStats();
 
@@ -158,7 +154,7 @@ function checkAnswer(answer) {
 
 
 function startTimer() {
-    clearInterval(timerInterval); // Clear any existing timers
+    clearInterval(timerInterval);
     timeLeft = 10;
     document.getElementById('timer').textContent = timeLeft;
 
@@ -188,13 +184,12 @@ document.getElementById('resetStats').addEventListener('click', () => {
     correctAnswers = 0;
     incorrectAnswers = 0;
     updateLocalStorage();
-    clearAchievements();  // Clear achievements
+    clearAchievements();  
     displayAchievements()
 
-    loadStats(); // To reflect the reset data on the website
+    loadStats(); 
 });
 
-// Start the game by fetching the questions
 function loadStats() {
     correctAnswers = parseInt(localStorage.getItem('correctAnswers')) || 0;
     incorrectAnswers = parseInt(localStorage.getItem('incorrectAnswers')) || 0;
@@ -203,19 +198,17 @@ function loadStats() {
     document.getElementById('incorrectAnswers').textContent = incorrectAnswers;
 }
 document.getElementById('startTrivia').addEventListener('click', () => {
-    // Start the game by fetching the questions
+
     fetchQuestions();
     displayAchievements()
 
     loadStats();
-    // Optionally, you can hide the start button once the game starts
+
     document.getElementById('startTrivia').style.display = 'none';
 });
 document.getElementById('backpackLink').addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent default action of the link
-    
-    displayAchievements(); // Refresh the achievements list
-
+    event.preventDefault();
+    displayAchievements();
     const menu = document.getElementById('achievementsMenu');
     if (menu.classList.contains('open')) {
         menu.classList.remove('open');
@@ -243,7 +236,6 @@ function displayAchievements() {
     }
 }
 
-// Call the loadStats function when the script initializes
 displayAchievements()
 loadStats();
 

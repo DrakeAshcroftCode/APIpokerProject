@@ -7,44 +7,38 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Trivia Game</h1>
-    <nav id="y2kNav">
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#rules">Rules</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <div id="navbg">
+        <h1>Trivia Game</h1>
+        <img id="logo" src="logo.jpg">
+        <nav id="y2kNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Geo-Trivia.html">Geography</a></li>
+                <li><a href="TelevisionProject.HTML">Television</a></li>
+                <li><a href="glossary.html">index</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <div id="trivia">
+        <div id="question"></div>
+        <div id="answers"></div>
+        <div>Timer: <span id="timer">10</span> seconds left</div>
+        <div>Score: <span id="score">0</span></div>
+        <button id="nextQuestion">Next Question</button>
+        <div>Correct Answers: <span id="correctAnswers">0</span></div>
+        <div>Incorrect Answers: <span id="incorrectAnswers">0</span></div>
+        <button id="startTrivia">Start Trivia</button>
+        <button id="resetStats">Reset Stats</button>
+    </div>
 
+    <a href="#" id="backpackLink">
+        <img src="backpack.png" alt="Backpack" id="backpackImage">
+    </a>
 
-    <div id="question"></div>
-    <div id="answers"></div>
-    <div>Timer: <span id="timer">10</span> seconds left</div>
-    <div>Score: <span id="score">0</span></div>
-    <button id="nextQuestion">Next Question</button>
-
-    <div>Correct Answers: <span id="correctAnswers">0</span></div>
-<div>Incorrect Answers: <span id="incorrectAnswers">0</span></div>
-<button id="startTrivia">Start Trivia</button>
-<button id="resetStats">Reset Stats</button>
-</div>
-<!-- Backpack Image Link -->
-<a href="#" id="backpackLink">
-    <img src="backpack.png" alt="Backpack" id="backpackImage">
-</a>
-
-<!-- Achievements/Items Menu -->
-<div id="achievementsMenu">
-    <ul id="achievementsList">
-        <!-- Sample achievements/items -->
-        <li>Achievement 1</li>
-        <li>Achievement 2</li>
-        <!-- More achievements/items can be added here -->
-    </ul>
-</div>
+    <div id="achievementsMenu">
+        <ul id="achievementsList"></ul>
+    </div>
 
     <script src="script.js"></script>
 </body>
