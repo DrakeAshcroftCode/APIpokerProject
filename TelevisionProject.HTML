@@ -149,6 +149,20 @@ li:hover {
     display: flex;
     justify-content: space-between;
 }
+.video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 400px;
+        height: 300px;
+}
+.video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        padding-top: 25px;
+        height: 0;
+        overflow: hidden;
+}
 
 
 
@@ -203,7 +217,16 @@ li:hover {
             <P>Stay up-to-date with current events and pop culture </P>
             <p>Recognize the main actors in popular TV series.</p>
             <p>Trivia questions might revolve around an actor's roles</p>
-
+    
+            <div class="video-container">
+            <iframe
+        width="1000"
+        height="290"
+        src="https://www.youtube.com/embed/GVPzGBvPrzw?autoplay=1&mute=1&loop=1&playlist=GVPzGBvPrzw"
+        frameborder="0"
+        allowfullscreen
+    ></iframe>
+    </div>
 
                
         </div>
@@ -217,19 +240,21 @@ li:hover {
 </div>
 
 
-    <div class="image-container1">
+<div class="container">
+    <a href="mythology-trivia.html" class="image-container1">
         <img src="mythology.avif" alt="Image 1" width="250px" height="250px">
         <div class="text1">
             <p>This is Mythology Trivia</p>
         </div>
-    </div>
+    </a>
 
-    <div class="image-container2">
+    <a href="geography-trivia.html" class="image-container2">
         <img src="geography-image-300x300.jpg" alt="Image 2" width="250px" height="250px">
         <div class="text2">
             <p>This is Geography Trivia</p>
         </div>
-    </div>
+    </a>
+</div>
 
     
     <script src="TPROJECT.js"></script>
