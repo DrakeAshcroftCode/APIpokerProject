@@ -2,12 +2,14 @@ body {
     position: relative;
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #F0EAD6;
+    background-color: #F0EAD6; /* Base color */
     overflow: hidden;
-    height: 100vh;
-    display: flex;
+    height:100vh;
+    display: flex;           /* Make body a flex container */
+
 }
 
+/* Triangle 1 (Top-left) */
 body::before {
     content: "";
     position: absolute;
@@ -15,16 +17,12 @@ body::before {
     left: -10%;
     width: 50%;
     height: 50%;
-    background: #FF69B4;
+    background: #FF69B4; /* Hot pink color */
     clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
     z-index: -1;
-    border:2px solid;
 }
-#logo {
-    margin-left:20px;
-    width: 90px;
-    height: 90px;
-}
+
+/* Triangle 2 (Bottom-right) */
 body::after {
     content: "";
     position: absolute;
@@ -32,11 +30,12 @@ body::after {
     right: -10%;
     width: 40%;
     height: 50%;
-    background: #FFD700;
+    background: #FFD700; /* Gold color */
     clip-path: polygon(100% 100%, 0% 100%, 100% 0%);
     z-index: -1;
 }
 
+/* Another shape (rectangle at the top-right for variety) */
 .container::before {
     content: "";
     position: absolute;
@@ -44,10 +43,11 @@ body::after {
     right: 5%;
     width: 20%;
     height: 10%;
-    background: #00CED1;
+    background: #00CED1; /* Turquoise */
     z-index: -1;
 }
 
+/* Add a circle for more variety (Bottom-left) */
 .container::after {
     content: "";
     position: absolute;
@@ -55,80 +55,76 @@ body::after {
     left: 10%;
     width: 15%;
     height: 15%;
-    background: #9400D3;
+    background: #9400D3; /* Violet */
     border-radius: 50%;
     z-index: -1;
 }
-
 #trivia {
-    position:relative;
-    margin-left: 100px;
-    border-radius: 25px;
-    width: 50%;
-    margin-top: 50px;
-    text-align: center;
-    padding: 20px;
-    border: 2px solid #000;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-    background: linear-gradient(45deg, #FFD700, #FF69B4);
+    border-radius:25px;
+    width:50%;
+    margin-top: 50px;        /* Move the trivia div a little bit downward */
+    text-align: center;      /* Center the text of all elements in trivia */
+    padding: 20px;           /* Add some padding for visual appeal */
+    border: 2px solid #000;  /* Add a border, optional */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Add a subtle shadow, optional */
+    background: linear-gradient(45deg, #FFD700, #FF69B4); /* Gradient end at hot pink */
 }
-
+/* Ensure container styles are positioned relatively to display the shapes */
 .container {
     position: relative;
+    padding: 2em;
+}
+.container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #FFF4DD;
-    border: 2px solid #FF69B4;
+    background-color: #FFF4DD; /* Light cream */
+    border: 2px solid #FF69B4; /* Hot pink border */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
-
 button {
     padding: 10px 20px;
     border: 1px solid;
-    border-radius: 25px;
-    background: #FFD700;
-    background: linear-gradient(45deg, #FFD700, #FF69B4);
+    border-radius: 25px; /* Bubble effect */
+    background: #FFD700; /* Gold gradient start */
+    background: linear-gradient(45deg, #FFD700, #FF69B4); /* Gradient end at hot pink */
     color: #FFF;
     font-weight: bold;
     cursor: pointer;
-    height: fit-content;
-    position: relative;
+    height:fit-content;
+    position:relative;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
     background: linear-gradient(45deg, #FF69B4, #FFD700);
 }
-
 h1, h2, h3 {
     font-family: 'Comic Sans MS', sans-serif;
     text-shadow: 2px 2px #FF69B4;
-    left:200px;
 }
-
 h1 {
     background-color: yellow;
     border-radius: 10px;
-    width: fit-content;
-    height: fit-content;
+    width:fit-content;
+    height:fit-content;
 }
 
 #score, #correctAnswers, #incorrectAnswers {
     font-size: 1.5em;
-    color: #FF4500;
+    color: #FF4500; /* Orangered color */
 }
 
+/* Nav Styles */
 #y2kNav {
     position: absolute;
-    top: 21%;
+    top: 20%;  /* Centering it vertically */
     left: 0;
-    transform: translateY(-50%);
-    background-color: #FF69B4;
+    transform: translateY(-50%);  /* Fine-tuning the vertical centering */
+    background-color: #FF69B4;  /* Hot pink with a little transparency */
     padding: 20px;
-    border-radius: 0 20px 20px 0;
-    width: 5%;
-    height:12%;
+    border-radius: 0 20px 20px 0;  /* Rounded right corners */
+    width:100px;
 }
 
 #y2kNav ul {
@@ -139,7 +135,6 @@ h1 {
 
 #y2kNav li {
     margin: 15px 0;
-    width:5%;
 }
 
 #y2kNav a {
@@ -147,27 +142,22 @@ h1 {
     color: white;
     font-weight: bold;
     font-size: 1.2em;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease;  /* Animation preparation */
 }
 
 #y2kNav a:hover {
-    transform: scale(1.1);
-    animation: y2kHover 0.5s infinite;
-    color: #FFD700;
-    background-color: #9400D3;
-    padding: 5px 10px;
-    border-radius: 5px;
+    transform: scale(1.1);  /* Slightly enlarge the link when hovered */
 }
 
+/* Animation to slide the nav in from the left when the page loads */
 @keyframes slideInFromLeft {
     0% {
-        transform: translateY(-50%) translateX(-100%);
+        transform: translateY(-50%) translateX(-100%); /* Start outside of view */
     }
     100% {
-        transform: translateY(-50%) translateX(0);
+        transform: translateY(-50%) translateX(0); /* End at the final position */
     }
 }
-
 @keyframes y2kHover {
     0%, 20%, 50%, 80%, 100% {
         transform: translateY(0);
@@ -180,60 +170,66 @@ h1 {
     }
 }
 
-#y2kNav {
-    animation: slideInFromLeft 0.5s ease forwards;
+#y2kNav a:hover {
+    animation: y2kHover 0.5s infinite; /* Wavy hover effect */
+    color: #FFD700; /* Change the link color to gold on hover */
+    background-color: #9400D3; /* Violet background on hover */
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
+#y2kNav {
+    animation: slideInFromLeft 0.5s ease forwards; /* Apply the animation */
+}
+/* Position the backpack image link in the bottom right */
+
+/* Hidden achievements/items menu */
 #achievementsMenu {
     position: fixed;
-    bottom: 25%;
-    right: 5%;
-    width: 230px;
-    max-height: 300px;
-    overflow-y: scroll;
-    background-color: #FFF4DD;
-    border: 2px solid #FF69B4;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
-    transform: translateY(700%);
-    transition: transform 0.5s ease;
-    z-index: -99;
+    bottom: 25%;  /* Adjust as per your requirement */
+    right: 5%;   /* Adjust as per your requirement */
+    width: 230px; /* Width of the menu */
+    max-height: 300px; /* Maximum height to enable scrolling */
+    overflow-y: scroll; /* Make it scrollable vertically */
+    background-color: #FFF4DD; /* Light cream background */
+    border: 2px solid #FF69B4; /* Hot pink border */
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transform: translateY(700%); /* Initial state - hide below the viewport */
+    transition: transform 0.5s ease; /* Transition for animation */
+    z-index: -99; /* Slightly lower z-index than the backpack image */
 }
-
 #achievementsMenu.open {
-    transform: translateY(0);
+    transform: translateY(0); /* move it to its original position when .open class is added */
 }
-
+/* Style for the achievements/items list */
 #achievementsList {
     list-style-type: none;
     margin: 0;
     padding: 0;
+
 }
 
 #achievementsList li {
     padding: 10px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ddd; /* Separator line */
 }
+
+/* Show achievements/items menu when class "open" is added */
 
 #backpackLink {
     position: fixed;
     bottom: 10px;
     right: 10px;
-    z-index: 100;
-}
+    z-index: 100; /* Ensure it stays on top of other elements */
 
+}
 #backpackImage {
     width: 170px;
     height: 170px;
-    transition: background-image 0.3s ease;
-}
+    transition: background-image 0.3s ease; /* Add a smooth transition effect */
 
+}
 #backpackImage:hover {
     background-image: url("backpackhover.png");
-    height: 200px;
-}
-#navbg {
-    height:30%;
-    width:8%;
-    border-radius: 0px 0px 25px 0px;
-    background-color: #FFD700 ;
+    height:200px;
 }

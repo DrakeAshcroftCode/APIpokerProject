@@ -5,17 +5,11 @@ body {
 }
 
 #gameboard {
-    border-radius: 25px;
-    padding: 20px;
-    margin-left: 43%;
-    background-color: #9400D3;
     display: grid;
     grid-template-columns: repeat(3, 100px);
     gap: 10px;
     justify-content: center;
     margin-top: 50px;
-    height: fit-content;
-    width: fit-content;
 }
 
 .hole {
