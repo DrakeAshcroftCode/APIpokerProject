@@ -1,5 +1,5 @@
-var play_button = document.getElementById("play-btn");
-var content_div = document.getElementById("question-container");
+const play_button = document.getElementById("play-button");
+const content_div = document.getElementById("question-container");
 
 play_button.addEventListener("click", function() {
     var currentStyle = content_div.style.display;
@@ -18,6 +18,7 @@ const restartButton = document.getElementById('restart-button'); // Add this lin
 let currentQuestionIndex = 0;
 let questions = [];
 const categorySelect = document.getElementById('category-select');
+
 async function fetchCategories() {
     try {
         const response = await fetch('https://opentdb.com/api_category.php');
@@ -29,12 +30,21 @@ async function fetchCategories() {
 }
 async function getTriviaQuestions() {
     try {
-        const response = await fetch('https://opentdb.com/api.php?amount=5&type=multiple');
+        const response = await fetch('https://opentdb.com/api.php?amount=5&category=22&type=multiple');
         const data = await response.json();
         questions = data.results;
+        decodeQuestionHtmlEntities();
         showQuestion();
     } catch (error) {
         console.error('Error fetching trivia questions:', error);
+    }
+}
+
+function decodeQuestionHtmlEntities() {
+    for (let i = 0; i < questions.length; i++) {
+        const parser = new DOMParser();
+        const decodedQuestion = parser.parseFromString(questions[i].question, 'text/html').body.textContent;
+        questions[i].question = decodedQuestion;
     }
 }
 // Function to display a question and answer choices
@@ -43,6 +53,13 @@ function showQuestion() {
     questionElement.innerText = currentQuestion.question;
     answerElement.innerHTML = '';
     const choices = [...currentQuestion.incorrect_answers, currentQuestion.correct_answer];
+    /**filter choices html character */
+    for (let i = 0; i < choices.length; i++) {
+        const parser = new DOMParser();
+        const decodedChoice = parser.parseFromString(choices[i].choice, 'text/html').body.textContent;
+        choices[i].choice = decodedChoice;
+    }
+    
     shuffleArray(choices);
     choices.forEach(choice => {
         const li = document.createElement('li');
